@@ -92,7 +92,7 @@ async def new_quote(name, keyword, body: str):
         else:
             return await my_bot.say("That quote already exists.")
     else:
-        return await my_bot.say("That is not a follower of the Weregoat.")
+        return await my_bot.say("That person is not in the database.")
 
 
 @my_bot.command(name="quote", aliases=["show", "display"])
