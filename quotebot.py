@@ -12,7 +12,7 @@ my_bot = Bot(command_prefix="!")
 
 # Check if author is owner of bot
 def is_owner():
-    return c.check(lambda ctx: ctx.message.author.id == "146925011503022080")
+    return c.check(lambda ctx: ctx.message.author.id == "")
 
 
 # method for adding quote and keyword info to the quotes.txt file
@@ -63,40 +63,7 @@ async def delete_keyword(*args):
 #async def on_message(message):
 
 
-
-
 """Commands"""
-
-
-@my_bot.command()
-async def hello():
-    """Greeting"""
-    return await my_bot.say("Nyaoo~. Ready for your inanity. ⌯ ⓛ ﻌ ⓛ ⌯")
-
-
-@my_bot.command()
-async def airhorn():
-    """React to airhorn"""
-    return await my_bot.say("⌯ ಠ ﻌ ಠ ⌯")
-
-
-@my_bot.command()
-async def momo():
-    """♡"""
-    return await my_bot.say("⌯˵ⓛ ﻌ ⓛ˵⌯♡")
-
-
-@my_bot.command(pass_context=True)
-async def me_say(ctx, *args):
-    if is_owner():
-        msg = ' '.join(args)
-        await my_bot.delete_message(ctx.message)
-        return await my_bot.say(msg)
-
-
-@my_bot.command(name="wonk")
-async def wonk():
-    return await my_bot.say("<:wonk:282170484974419978>")
 
 
 @my_bot.command(name="add", aliases=["new", "create"])
@@ -229,10 +196,10 @@ async def delete_quote(*args):
 @my_bot.command(name="quit", aliases=["shutdown", "end", "stop"])
 async def bot_quit():
     """Shut the bot down."""
-    await my_bot.say("Nap time... ⌯ ◡ ﻌ ◡ ⌯ ｡o O")
+    await my_bot.say("Shutting down...")
     await my_bot.logout()
 
 
-my_bot.run("MzIyMzMyNDA2MTc2Njc3ODkw.DBrDAw.4krJgWX_CIo7IY4qo7-4GgHbVIY")
+my_bot.run("")
 
 # way to add new names to database
