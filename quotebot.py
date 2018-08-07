@@ -3,16 +3,17 @@ import sys
 import datetime
 import fileinput
 import random
+import config as cfg
 from discord.ext.commands import Bot
 from discord.ext import commands as c
 
 
-my_bot = Bot(command_prefix="!")
+my_bot = Bot(command_prefix=cfg.settings['prefix'])
 
 
 # Check if author is owner of bot
 def is_owner():
-    return c.check(lambda ctx: ctx.message.author.id == "")
+    return c.check(lambda ctx: ctx.message.author.id == cfg.settings['auth_id'])
 
 
 # method for adding quote and keyword info to the quotes.txt file
@@ -200,6 +201,6 @@ async def bot_quit():
     await my_bot.logout()
 
 
-my_bot.run("")
+my_bot.run(cfg.settings['token'])
 
 # way to add new names to database
